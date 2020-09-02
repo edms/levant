@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [self-hosted]
+
+    steps:
+    - name: Checkout
+      uses: edms/checkout@v2
+
+    - uses: edms/private-action@v0.0.12
+      with:
+        target-action: edms/actions/packages/docker
